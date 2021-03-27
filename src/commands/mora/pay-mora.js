@@ -9,7 +9,7 @@ module.exports = class TestCommand extends BaseCommand {
 
     async run(client, message, args) {
 
-        const person = (typeof args[0] === 'undefined' || args[0] === null) ? null : await message.mentions[0].user;
+        const person = await message.mentions[0].user;
         const amount = (typeof args[1] === 'undefined' || args[1] === null) ? null : parseInt(args[1]);
 
         if (person === null) {
