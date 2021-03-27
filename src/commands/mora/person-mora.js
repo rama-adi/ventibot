@@ -8,8 +8,7 @@ module.exports = class TestCommand extends BaseCommand {
 
     async run(client, message, args) {
 
-        const person = await message.mentions[0].user;
-
+        const person = (typeof await message.mentions[0].user === 'undefined') ? null : await message.mentions[0].user;
 
         if (person === null) {
             await message.reply("Person doesn't exist!")
