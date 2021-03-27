@@ -23,7 +23,10 @@ module.exports = class TestCommand extends BaseCommand {
                 await message.reply([`You've lost ${amount}`, {"emote": "OrangeDogeHouse"}, "MORA to gamble!"], {whispered: true});
                 payws.wsBroadcast({
                     intent: "GAMBLE",
-                    currency: "MORA",
+                    currency: {
+                        ticker: "MORA",
+                        color: "gold"
+                    },
                     data: {
                         amount: amount,
                         win: false,
@@ -34,7 +37,10 @@ module.exports = class TestCommand extends BaseCommand {
                 mora.setMora(author, (mdata + (amount * 2)));
                 payws.wsBroadcast({
                     intent: "GAMBLE",
-                    currency: "MORA",
+                    currency: {
+                        ticker: "MORA"
+                    },
+
                     data: {
                         amount: amount,
                         win: true,

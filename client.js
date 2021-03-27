@@ -21,7 +21,7 @@ setInterval(function () {
     await registerEvents(app, '../events');
     mora.loadFromJson();
     await app.connect(config.token, config.refreshtoken).then(console.log('Bot connected!'));
-    await app.rooms.join('2293ef87-2d6b-42f2-bcf9-68ee71438b1b');
+    await app.rooms.join('819ae88c-94aa-4377-a31f-5affa9178295');
 })();
 
 ON_DEATH(async function () {

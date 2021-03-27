@@ -25,7 +25,10 @@ module.exports = class TestCommand extends BaseCommand {
                     mora.updateMora(person, amount);
                     payws.wsBroadcast({
                         intent: "PAYMENT",
-                        currency: "MORA",
+                        currency: {
+                            ticker: "MORA",
+                            color: "gold"
+                        },
                         data: {
                             amount: amount,
                             receiver: {
